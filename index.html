@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>San Diego Top Spots</title>
+        <style>
+            #map {
+             height: 400px;
+             width: 75%;
+            }
+         </style>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        
+
+        <div class="container">
+            <h1>San Diego Top Spots</h1>
+
+            <div class="container-fluid" id="map"></div>
+
+            <table class="table-bordered" id="top-spots-table">
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Link</th>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+          function initMap() {
+            var sanDiego = {lat: 32.7626702, lng: -117.1319784};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 11,
+              center: sanDiego
+            });
+            var marker = new google.maps.Marker({
+              position: sanDiego,
+              map: map
+            });
+          }
+        </script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgfLjLI3ZQKYpyuCMq6QPp_Q-MNLeIzrw&callback=initMap"></script>
+        <script src="main.js" charset="utf-8"></script>
+    </body>
+</html>
